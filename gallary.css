@@ -1,0 +1,83 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+#wrapper{
+    height:100vh;
+    overflow-x:hidden;
+    overflow-y:y;
+}
+
+.container{
+    height:100%;
+    max-width:1200px;
+    margin:0 auto;
+    /* used to make margin of left and right of same size sp that container will be placed at center */
+    padding:20px;
+    /* border aur content ke beech ke statement ko hum padding bolte hai */
+
+}
+.jds{
+    color:blueviolet;
+}
+
+.container h1{
+    margin:20px 0;
+    text-align:center;
+    margin-bottom:20px;
+    font-size:3rem;
+}
+.gallery{
+    display:flex;
+    flex-wrap:wrap;
+    /* by flex wrap nahi hoga to sare images row wise place ho jayenge,isliye hum flex wrap ka use karte hai jisse sare images vertically place ho jate hai */
+    justify-content:space-between;
+    /* to gives space between images or elements in container */
+
+}
+.card{
+    width:32%;
+    position:relative;
+    margin-bottom:20px;
+    border-radius:10px;
+    /* corners ko rounded karne keliye humne border radius ka use kar liya */
+    overflow:hidden;
+}
+.card img{
+    height:100%;
+    width:100%;
+    filter:grayscale(100%);
+    box-shadow:0 0 20px #333;
+    object-fit:cover;
+}
+.card:hover{
+    transform:scale(1.03);
+    filter:drop-shadow(0 0 10px #333);
+    transition:0.3s;
+
+}
+.card:hover img{
+    filter:grayscale(0%);
+}
+.card figurecaption{
+    position:absolute;
+    /* humme figcaption ko overlap karana hai to humme  */
+    bottom:0;
+    left:0;
+    padding:25px;
+    width:100%;
+    height:20%;
+    font-size:16px;
+    font-weight:500;
+    color:fuchsia;
+    opacity:0;
+    border-radius:0 0 10px 10px;
+    background:linear-gradient(0deg,rgba(0,0,0,0.5)0%,rgba(255,255,255,0.8));
+    transition:0.3s;
+}
+.card:hover figurecaption{
+    opacity:1;
+    transform:scale(1.03);
+}
